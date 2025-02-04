@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Валентинка для тебя ❤️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff0f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .slide {
+            text-align: center;
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+        }
+        h1 {
+            font-size: 28px;
+            color: #ff1493;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #ff69b4;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .heart {
+            position: absolute;
+            color: #ff1493;
+            font-size: 24px;
+            animation: float 5s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0); opacity: 1; }
+            50% { transform: translateY(-100px) rotate(180deg); opacity: 0.7; }
+            100% { transform: translateY(0) rotate(360deg); opacity: 1; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Анимация сердечек -->
+<div class="hearts">
+    <div class="heart" style="left: 10%; animation-delay: 0s;">❤️</div>
+    <div class="heart" style="left: 20%; animation-delay: 1s;">❤️</div>
+    <div class="heart" style="left: 30%; animation-delay: 2s;">❤️</div>
+    <div class="heart" style="left: 40%; animation-delay: 3s;">❤️</div>
+    <div class="heart" style="left: 50%; animation-delay: 4s;">❤️</div>
+    <div class="heart" style="left: 60%; animation-delay: 5s;">❤️</div>
+    <div class="heart" style="left: 70%; animation-delay: 6s;">❤️</div>
+    <div class="heart" style="left: 80%; animation-delay: 7s;">❤️</div>
+    <div class="heart" style="left: 90%; animation-delay: 8s;">❤️</div>
+</div>
+
+<!-- Слайд 1 -->
+<div class="slide active">
+    <h1>Привет, моя дорогая! ❤️</h1>
+    <p>Ты зашла сюда, чтобы получить немного любви и тепла. Готова?</p>
+    <button onclick="showSlide(1)">Конечно, давай!</button>
+</div>
+
+<!-- Слайд 2 -->
+<div class="slide">
+    <h1>Ты — самое лучшее, что у меня есть! 🌟</h1>
+    <p>Я хочу, чтобы ты знала, что ты делаешь этот мир ярче и лучше.</p>
+    <p>Спасибо, что ты есть у меня!</p>
+    <button onclick="showSlide(2)">А что дальше?</button>
+</div>
+
+<!-- Слайд 3 -->
+<div class="slide">
+    <h1>С Днём Святого Валентина! 💌</h1>
+    <p>Пусть этот день будет наполнен любовью, смехом и радостью!</p>
+    <p>Ты заслуживаешь всего самого лучшего!</p>
+    <button onclick="showSlide(0)">Начать сначала ❤️</button>
+</div>
+
+<script>
+    // Функция для переключения слайдов
+    function showSlide(index) {
+        // Находим все слайды
+        const slides = document.querySelectorAll('.slide');
+        // Скрываем все слайды
+        slides.forEach(slide => {
+            slide.classList.remove('active');
+        });
+        // Показываем выбранный слайд
+        slides[index].classList.add('active');
+    }
+</script>
+
+</body>
+</html>
